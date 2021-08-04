@@ -25,4 +25,10 @@ public class UserRegistrationTest {
         boolean result = name.ValidEmail(email);
         Assert.assertTrue(result);
     }
+    @Test
+    public void ValidMobileNumber(){
+        String num = "91 1234567890";
+        boolean result = name.ValidMobileNumber(num);
+        Assert.assertTrue(result);
+    }
 }

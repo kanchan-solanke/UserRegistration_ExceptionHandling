@@ -38,21 +38,35 @@ public class UserRegistrationException {
         return false;
     }
 
-    public boolean ValidEmail(String email){
+    public boolean ValidEmail(String email) {
         Scanner sc = new Scanner(System.in);
-        boolean result = Pattern.matches("^[a-zA-Z0-9.+_-]+[@][a-zA-Z0-9]+[.]co(m|.in)$",email);
+        boolean result = Pattern.matches("^[a-zA-Z0-9.+_-]+[@][a-zA-Z0-9]+[.]co(m|.in)$", email);
         try {
             if (result) {
                 System.out.println("Email is Valid: ");
-            }
-            else {
+            } else {
                 throw new CustomException("Email is Invalid. Please Enter Valid Email");
             }
             return true;
+        } catch (CustomException e) {
+            System.out.println(e.getMessage());
         }
-            catch(CustomException e){
-                System.out.println(e.getMessage());
+        return false;
+    }
+
+    public boolean ValidMobileNumber(String num) {
+        Scanner sc = new Scanner(System.in);
+        boolean result = Pattern.matches("^([0-9]{2}) ([1-9]{1}[0-9]{9,})$",num);
+        try {
+            if (result) {
+                System.out.println("Mobile Number is Valid");
+            } else {
+                throw new CustomException("Mobile Number is Invalid: Please Enter Valid Password");
             }
+            return true;
+        } catch (CustomException e) {
+            System.out.println(e.getMessage());
+        }
         return false;
     }
 }
