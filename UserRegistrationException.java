@@ -20,4 +20,21 @@ public class UserRegistrationException {
         }
         return false;
     }
+
+
+    public boolean ValidLastName(String lname) {
+        Scanner sc = new Scanner(System.in);
+        boolean result = Pattern.matches("^([A-Z]{1})([a-z A-Z]{2,})$", lname);
+        try {
+            if (result) {
+                System.out.println("Last Name is Valid: ");
+                return true;
+            } else {
+                throw new CustomException("Last Name is Invalid\n. Please Enter Last Valid Name: ");
+            }
+        } catch (CustomException e) {
+            System.out.println(e.getMessage());
+        }
+        return false;
+    }
 }

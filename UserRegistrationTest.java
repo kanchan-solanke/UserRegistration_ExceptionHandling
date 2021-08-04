@@ -12,4 +12,10 @@ public class UserRegistrationTest {
         boolean result = name.ValidfirstName(firstName);
         Assert.assertTrue(result);
     }
+    @Test
+    public void ValidLastName(){
+        String lastName = "Solanke";
+        boolean result = name.ValidLastName(lastName);
+        Assert.assertTrue(result);
+    }
 }
