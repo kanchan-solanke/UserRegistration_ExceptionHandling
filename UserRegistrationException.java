@@ -1,0 +1,23 @@
+package org.example;
+
+import java.util.Scanner;
+import java.util.regex.Pattern;
+
+public class UserRegistrationException {
+
+    public boolean ValidfirstName(String firstname) {
+        Scanner sc = new Scanner(System.in);
+        boolean result = Pattern.matches("^[A-Z]{1}+[a-z]{3,}", firstname);
+        try {
+            if (result) {
+                System.out.println("First Name is Valid");
+                return true;
+            } else {
+                throw new CustomException("First Name is Invalid: Please Enter Valid First Name: ");
+            }
+        } catch (CustomException e) {
+            System.out.printf(e.getMessage());
+        }
+        return false;
+    }
+}
