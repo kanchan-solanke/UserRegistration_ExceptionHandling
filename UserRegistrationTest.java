@@ -44,4 +44,10 @@ public class UserRegistrationTest {
         boolean result = name.ValidPasswordAtLeastOneUpperCase(password);
         Assert.assertTrue(result);
     }
+    @Test
+    public void ValidPasswordAtLeastOneNumericValue(){
+        String password = "K1anhanj";
+        boolean result = name.ValidPasswordAtLeastOneNumericValue(password);
+        Assert.assertTrue(result);
+    }
 }
