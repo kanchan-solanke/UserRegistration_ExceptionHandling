@@ -37,4 +37,22 @@ public class UserRegistrationException {
         }
         return false;
     }
+
+    public boolean ValidEmail(String email){
+        Scanner sc = new Scanner(System.in);
+        boolean result = Pattern.matches("^[a-zA-Z0-9.+_-]+[@][a-zA-Z0-9]+[.]co(m|.in)$",email);
+        try {
+            if (result) {
+                System.out.println("Email is Valid: ");
+            }
+            else {
+                throw new CustomException("Email is Invalid. Please Enter Valid Email");
+            }
+            return true;
+        }
+            catch(CustomException e){
+                System.out.println(e.getMessage());
+            }
+        return false;
+    }
 }

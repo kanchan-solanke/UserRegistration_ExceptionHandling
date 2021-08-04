@@ -18,4 +18,11 @@ public class UserRegistrationTest {
         boolean result = name.ValidLastName(lastName);
         Assert.assertTrue(result);
     }
+
+    @Test
+    public void ValidEmail(){
+        String email = "abc.xyz@bl.co.in";
+        boolean result = name.ValidEmail(email);
+        Assert.assertTrue(result);
+    }
 }
