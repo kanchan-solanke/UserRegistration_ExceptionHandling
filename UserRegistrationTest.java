@@ -50,4 +50,10 @@ public class UserRegistrationTest {
         boolean result = name.ValidPasswordAtLeastOneNumericValue(password);
         Assert.assertTrue(result);
     }
+    @Test
+    public void ValidPasswordAtLeastOneSpecialChar(){
+        String password = "K1@nhanj";
+        boolean result = name.ValidPasswordAtLeastOneSpecialChar(password);
+        Assert.assertTrue(result);
+    }
 }
