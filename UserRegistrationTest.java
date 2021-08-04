@@ -31,4 +31,10 @@ public class UserRegistrationTest {
         boolean result = name.ValidMobileNumber(num);
         Assert.assertTrue(result);
     }
+    @Test
+    public void ValidPassword(){
+        String password = "kanchan1";
+        boolean result = name.ValidPassword(password);
+        Assert.assertTrue(result);
+    }
 }

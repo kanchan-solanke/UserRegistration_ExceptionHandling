@@ -56,7 +56,7 @@ public class UserRegistrationException {
 
     public boolean ValidMobileNumber(String num) {
         Scanner sc = new Scanner(System.in);
-        boolean result = Pattern.matches("^([0-9]{2}) ([1-9]{1}[0-9]{9,})$",num);
+        boolean result = Pattern.matches("^([0-9]{2}) ([1-9]{1}[0-9]{9,})$", num);
         try {
             if (result) {
                 System.out.println("Mobile Number is Valid");
@@ -69,4 +69,21 @@ public class UserRegistrationException {
         }
         return false;
     }
+
+    public boolean ValidPassword(String password) {
+        Scanner sc = new Scanner(System.in);
+        boolean result = Pattern.matches("^[a-zA-Z0-9-@#$]{8,}$", password);
+        try {
+            if (result) {
+                System.out.println("Password is Valid: ");
+            } else {
+                throw new CustomException("Password is Invalid. Please Enter Valid Password: ");
+            }
+            return true;
+        } catch (CustomException e) {
+            System.out.println(e.getMessage());
+        }
+        return false;
+    }
 }
+
